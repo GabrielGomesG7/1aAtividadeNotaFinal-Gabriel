@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Produtos</title>
+    <link rel="stylesheet" href="style2.css">
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .tabela-produtos {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tabela-produtos thead tr {
+            background-color: #4c8caf;
+            color: white;
+            text-align: left;
+        }
+        
+        .tabela-produtos th,
+        .tabela-produtos td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        
+        .tabela-produtos tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .tabela-produtos tbody tr:hover {
+            background-color: #e6eff7;
+        }
+        
+        .preco {
+            font-weight: bold;
+            color: #2a4872;
+        }
+        
+        .categoria {
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Catálogo de Produtos</h1>
+    <table class="tabela-produtos">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Categoria</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Smartphone X200</td>
+                <td class="preco">R$ 2.499,90</td>
+                <td class="categoria">Eletrônicos</td>
+                <td>Smartphone com tela de 6.5", 128GB de armazenamento e câmera tripla.</td>
+            </tr>
+            <tr>
+                <td>Notebook Ultra Slim</td>
+                <td class="preco">R$ 4.299,00</td>
+                <td class="categoria">Informática</td>
+                <td>Notebook com processador i7, 16GB RAM e SSD de 512GB.</td>
+            </tr>
+            <tr>
+                <td>Fone Bluetooth Pro</td>
+                <td class="preco">R$ 349,90</td>
+                <td class="categoria">Acessórios</td>
+                <td>Fone sem fio com cancelamento de ruído e bateria de 30h.</td>
+            </tr>
+            <tr>
+                <td>Mesa Digitalizadora</td>
+                <td class="preco">R$ 899,00</td>
+                <td class="categoria">Informática</td>
+                <td>Área ativa de 10x6 polegadas, compatível com os principais softwares.</td>
+            </tr>
+            <tr>
+                <td>Smart TV 55" 4K</td>
+                <td class="preco">R$ 3.199,00</td>
+                <td class="categoria">Eletrônicos</td>
+                <td>TV com resolução 4K, HDR e sistema operacional smart.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
