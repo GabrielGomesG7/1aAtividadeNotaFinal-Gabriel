@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contato</title>
+    <!-- CSS bem básico, sem necessidade de externalizar o mesmo -->
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto; }
+        input, textarea { width: 100%; padding: 8px; margin: 5px 0 15px; }
+        button { background: #007bff; color: white; border: none; padding: 10px 20px; }
+        .success { color: green; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h2>Formulário de Contato</h2>
+    
+    <div id="success" class="success" style="display:none">
+        Mensagem enviada com sucesso!
+    </div>
+    
+    <form id="contactForm">
+        <label>Nome:</label>
+        <input type="text" id="name" required>
+        <div id="nameError" class="error"></div>
+        
+        <label>Email:</label>
+        <input type="email" id="email" required>
+        <div id="emailError" class="error"></div>
+        
+        <label>Mensagem:</label>
+        <textarea id="message" required></textarea>
+        <div id="messageError" class="error"></div>
+        
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Envio padrão é cancelado
+        document.getElementById('contactForm').onsubmit = function(e) {
+            e.preventDefault();
+            
+            // Reset 
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+            document.getElementById('success').style.display = 'none';
+            
+            // Variáveis & valores
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            let valid = true;
+            
+            // Validações
+            if (!name) {
+                document.getElementById('nameError').textContent = 'Nome é obrigatório';
+                valid = false;
+            }
+            
+            if (!email.includes('@') || !email.includes('.com')) {
+                document.getElementById('emailError').textContent = 'Email inválido';
+                valid = false;
+            }
+            
+            if (!message) {
+                document.getElementById('messageError').textContent = 'Mensagem é obrigatória';
+                valid = false;
+            }
+            
+            // Realiza o envio se for validado
+            if (valid) {
+                document.getElementById('success').style.display = 'block';
+                document.getElementById('contactForm').reset();
+            }
+        };
+    </script>
+</body>
+</html>
